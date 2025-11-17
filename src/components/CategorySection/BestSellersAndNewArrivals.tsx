@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 // Sample product data
 const products = {
@@ -126,13 +127,15 @@ const ProductCard = ({ product }) => (
           {product.tag}
         </span>
       )}
-      <div className="relative h-60 md:h-72 lg:h-64 xl:h-72 2xl:h-80 overflow-hidden rounded-lg">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+   <div className="relative h-60 md:h-72 lg:h-64 xl:h-72 2xl:h-80 overflow-hidden rounded-lg">
+  <Image
+    src={product.image}
+    alt={product.name}
+    fill
+    className="object-contain transition-transform duration-500 group-hover:scale-105"
+    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+  />
+</div>
     </div>
     <div className="mt-4 text-center">
       <h3 className="text-lg md:text-xl font-semibold text-gray-800 line-clamp-1">

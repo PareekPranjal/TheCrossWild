@@ -369,7 +369,7 @@
 //       isRed: false,
 //       path: "/bag_manufacturing",
 //       subCategories: [
-//         { name: "Brilliant Finishes", isHeader: true, path: null }, 
+//         { name: "Brilliant Finishes", isHeader: true, path: null },
 //         { name: "Spot UV Visiting Cards", path: "/visiting-cards/spot-uv" },
 //         {
 //           name: "Raised Foil Visiting Cards",
@@ -401,13 +401,13 @@
 //     {
 //       name: "Bulk Orders",
 //       isRed: false,
-//       path: "/contact", 
+//       path: "/contact",
 //       subCategories: null,
 //     },
 //     {
 //       name: "Custom Drinkware",
 //       isRed: false,
-//       path: "/custom_drinkware", 
+//       path: "/custom_drinkware",
 //     },
 //     {
 //       name: "School Staff Uniform",
@@ -831,8 +831,6 @@
 //   );
 // }
 
-
-
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link"; // **1. Import the Next.js Link component**
 import {
@@ -841,6 +839,7 @@ import {
   FaRegNewspaper,
   FaImage,
 } from "react-icons/fa";
+import Image from "next/image";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -1023,9 +1022,7 @@ export default function App() {
   };
 
   return (
-    
     <nav className="fixed top-0 z-50 w-full bg-white font-sans shadow-sm transition-all duration-300">
-     
       {/* Top Bar for Desktop and Mobile */}
       <div className="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Left Section (Mobile: Menu & Search, Desktop: Logo) */}
@@ -1070,13 +1067,16 @@ export default function App() {
           </button> */}
           {/* Desktop Logo (Assuming it's a link to the homepage) */}
           <Link href="/">
-          <div className="h-8 w-auto flex items-center">
-  <img
-    src="/images/logo/logo-crosswile.jpg"
-    alt="Crosswile Logo"
-    className="h-15 w-auto object-contain mr-8 hidden cursor-pointer lg:block"
-  />
-</div>
+            <div className="flex h-8 w-auto items-center">
+              <Image
+                src="/images/logo/logo-crosswile.jpg"
+                alt="Crosswile Logo"
+                width={120} // Adjust based on your logo's aspect ratio
+                height={32} // h-8 = 32px (8 * 4 = 32)
+                className="mr-8 hidden h-15 w-auto cursor-pointer object-contain lg:block"
+                priority // Optional: if it's above the fold
+              />
+            </div>
           </Link>
         </div>
 
@@ -1110,16 +1110,18 @@ export default function App() {
         </div> */}
 
         {/* Mobile Logo (Assuming it's a link to the homepage) */}
-       <div className="flex w-full justify-center lg:hidden mt-2">
-  <Link href="/">
-    <img
-      src="/images/logo/logo-crosswile.jpg"
-      alt="Crosswile Logo"
-      className="w-20 h-auto cursor-pointer"
-    />
-  </Link>
-</div>
-
+        <div className="mt-2 flex w-full justify-center lg:hidden">
+          <Link href="/">
+            <Image
+              src="/images/logo/logo-crosswile.jpg"
+              alt="Crosswile Logo"
+              width={80}
+              height={40}
+              className="h-auto w-20 cursor-pointer"
+              priority // Optional: if it's above the fold/important image
+            />
+          </Link>
+        </div>
 
         {/* Right Section (Icons & Links) */}
         <div className="flex items-center space-x-6">
@@ -1438,8 +1440,6 @@ export default function App() {
           </div>
         </div>
       </div>
-      
     </nav>
   );
 }
-

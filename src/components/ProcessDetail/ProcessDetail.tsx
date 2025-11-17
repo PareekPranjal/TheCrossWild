@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   Handshake,
   ClipboardList,
   Scissors,
-Spool,
+  Spool,
   Printer,
   ShieldCheck,
   Package,
@@ -20,7 +21,7 @@ export default function ProcessDetailsPage() {
       icon: Handshake,
       img: "/images/about/clinte-meet.jpg", // replace with your image
       alt: "Client meeting at our Jaipur facility",
-      text: `We are committed to finding the right products for you. To tailor to your particular needs, we hold various meetings with our team to discuss in-depth your specific use case and ensure we don't miss a thing with your vision. From Wholesale Hoodies Manufacturer in Jaipur to Custom Caps for Teams in Jaipur, we listen to you in detail before progressing for Sampling phase.`,
+      text: `We are committed to finding the right products for you. To tailor to your particular needs, we hold various meetings with our team to discuss in-depth your specific use case and ensure we don&apos;t miss a thing with your vision. From Wholesale Hoodies Manufacturer in Jaipur to Custom Caps for Teams in Jaipur, we listen to you in detail before progressing for Sampling phase.`,
     },
     {
       id: "step-2",
@@ -202,18 +203,18 @@ export default function ProcessDetailsPage() {
               </p>
             </div>
             <div className="flex gap-3">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-white font-medium shadow-sm hover:bg-indigo-700 transition"
               >
                 Contact Us
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/"
                 className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-gray-900 font-medium shadow-sm ring-1 ring-gray-200 hover:bg-gray-50 transition"
               >
                 Back to Home
-              </a>
+              </Link>
             </div>
           </div>
         </div>
