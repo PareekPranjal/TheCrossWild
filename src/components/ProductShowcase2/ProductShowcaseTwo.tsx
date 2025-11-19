@@ -133,14 +133,14 @@ const ProductShowcase = () => {
 
         {/* Scroll Arrows (Hidden on mobile, visible on hover/desktop) */}
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 z-20 hidden sm:group-hover:block"
+          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 z-20  "
           onClick={() => scroll(ref, 'left')}
           aria-label="Scroll left"
         >
           <ArrowIcon direction="left" />
         </button>
         <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 z-20 hidden sm:group-hover:block"
+          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-white rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 z-20  "
           onClick={() => scroll(ref, 'right')}
           aria-label="Scroll right"
         >
